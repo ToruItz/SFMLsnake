@@ -177,9 +177,11 @@ int main() {
         else if(Keyboard::isKeyPressed(Keyboard::Left) && derection1 != 'r') derection1 = 'l';
 
         if(choose == 1){
+            sendto(inoutstream, (char*)&apple, sizeof(apple), 0, (sockaddr*)&client, sizeof(client));
             sendto(inoutstream, (char*)&derection1, sizeof(derection1), 0, (sockaddr*)&client, sizeof(client));
             recvfrom(inoutstream, (char*)&derection2, sizeof(derection2), 0, (sockaddr*)&client, &sizeOfClient);
         }else{
+            recvfrom(inoutstream, (char*)&apple, sizeof(apple), 0, (sockaddr*)&addr, &sizeofaddr);
             recvfrom(inoutstream, (char*)&derection2, sizeof(derection2), 0, (sockaddr*)&addr, &sizeofaddr);
             sendto(inoutstream, (char*)&derection1, sizeof(derection1), 0, (sockaddr*)&addr, sizeof(addr));
         }
