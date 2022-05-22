@@ -12,7 +12,7 @@
 #define X 2560
 #define Y 1440
 #define START_POINTS 50
-#define LOCALHOST "192.168.1.137"
+#define LOCALHOST "25.73.9.134"
 #define PORT 8000
 
 using namespace sf;
@@ -220,9 +220,11 @@ int main() {
 
         window.draw(framePerSecond);
         drawSnake(player1, &window);
+        drawSnake(player2, &window);
         window.draw(apple);
         window.draw(Apple);
         window.draw(Score1);
+        window.draw(Score2);
         window.draw(Build);
 
         if(isColide(player1)) {
