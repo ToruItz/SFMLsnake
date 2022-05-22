@@ -178,8 +178,10 @@ int main() {
 
         if(choose == 1){
             sendto(inoutstream, (char*)&derection1, sizeof(derection1), 0, (sockaddr*)&client, sizeof(client));
+            recvfrom(inoutstream, (char*)&derection2, sizeof(derection2), 0, (sockaddr*)&client, &sizeOfClient);
         }else{
             recvfrom(inoutstream, (char*)&derection2, sizeof(derection2), 0, (sockaddr*)&addr, &sizeofaddr);
+            sendto(inoutstream, (char*)&derection1, sizeof(derection1), 0, (sockaddr*)&addr, sizeof(addr));
         }
 
         if(derection1 == 'r' && player1[0].getPosition().x > X) player1[0].setPosition(0, player1[0].getPosition().y);
@@ -203,7 +205,9 @@ int main() {
             score1++;
             sound.setBuffer(buffer);
             sound.play();
-        }else if(apple.getGlobalBounds().intersects(player2[0].getGlobalBounds())){
+        }
+
+        if(apple.getGlobalBounds().intersects(player2[0].getGlobalBounds())){
             apple.setPosition(random()%X,random()%Y);
             Apple.setPosition(apple.getPosition().x - 10, apple.getPosition().y - 30);
             player2.push_back(player2[player2.size() - 1]);
