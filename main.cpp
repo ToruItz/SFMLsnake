@@ -9,8 +9,14 @@
 #include <ws2tcpip.h>
 #include <windows.h>
 
-#define X 2560
-#define Y 1440
+#pragma comment(lib, "sfml-system")
+#pragma comment(lib, "sfml-window")
+#pragma comment(lib, "sfml-graphics")
+#pragma comment(lib, "sfml-audio")
+
+#pragma comment(lib, "user32.lib")
+int X = GetSystemMetrics(SM_CXSCREEN);
+int Y = GetSystemMetrics(SM_CYSCREEN);
 #define START_POINTS 50
 #define LOCALHOST "25.73.9.134"
 #define PORT 8000
