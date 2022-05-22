@@ -1,0 +1,3 @@
+C:/Users/Pavel/CLionProjects/SFMLProj/cmake-build-debug/CMakeFiles/SFMLProj.dir
+C:/Users/Pavel/CLionProjects/SFMLProj/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Pavel/CLionProjects/SFMLProj/cmake-build-debug/CMakeFiles/rebuild_cache.dir
